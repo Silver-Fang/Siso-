@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <RootNamespace>CppDllAdapter</RootNamespace>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <Platforms>AnyCPU;x64</Platforms>
+    <Authors>帕菲菲</Authors>
+    <Description>方便地运行时加载C++Dll，并获取Api函数的.Net委托方法。输入Dll的文件名，定义委托类型，输入Api函数名即可取得委托。</Description>
+    <PackageLicenseFile>许可.txt</PackageLicenseFile>
+    <Version>1</Version>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="许可.txt">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
+
+</Project>

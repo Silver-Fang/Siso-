@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <RootNamespace>Siso库</RootNamespace>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <Platforms>AnyCPU;x64</Platforms>
+    <UserSecretsId>11375a46-a25a-4d4b-9b16-888332eb2a87</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Import Include="System.ComponentModel" />
+    <Import Include="System.Runtime.InteropServices" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CppDllAdapter\CppDllAdapter.vbproj" />
+  </ItemGroup>
+
+</Project>
