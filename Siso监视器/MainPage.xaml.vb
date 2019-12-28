@@ -27,11 +27,11 @@ Public NotInheritable Class MainPage
 			Call 库未加载对话框.ShowAsync()
 			Exit Sub
 		Else
-			If SisoHal.GetDeviceCount = 0 Then
-				Call 无设备对话框.ShowAsync()
-			Else
-				SisoHal.SHalInitDevice.Invoke(0)
-			End If
+			'If SisoHal.GetDeviceCount = 0 Then
+			'	Call 无设备对话框.ShowAsync()
+			'Else
+			'	SisoHal.SHalInitDevice.Invoke(0)
+			'End If
 		End If
 	End Sub
 

@@ -7,6 +7,7 @@
 	''' The frame grabber cannot be initialized
 	''' </summary>
 	FG_CANNOT_INIT_MICROENABLE = -3000
+	FG_INVALID_EVENTMASK = -2162
 	FG_NOT_IMPLEMENTED = -2130
 	''' <summary>
 	''' Timeout occurs.

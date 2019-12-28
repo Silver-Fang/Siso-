@@ -19,6 +19,8 @@
 	''' <param name="路径">Applet的路径，通常在Dll子目录下</param>
 	''' <returns>找到的Applet</returns>
 	Function FindApplet(路径 As String) As Applet
-		Return New Applet(fglib5.Fg_findAppletIteratorItem.Invoke(指针, 路径), fglib5)
+		For Each a As Applet In Me
+			If String.Equals(a.Path, 路径, StringComparison.OrdinalIgnoreCase) Then Return a
+		Next
 	End Function
 End Class

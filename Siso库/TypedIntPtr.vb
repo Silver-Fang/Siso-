@@ -35,9 +35,13 @@ Public MustInherit Class TypedIntPtr
 	Shared ReadOnly Property IntPtrReader As 读指针(Of IntPtr) = Function(指针 As IntPtr) As IntPtr
 																  Return Marshal.ReadIntPtr(指针)
 															  End Function
+	Shared ReadOnly Property GuidReader As 读指针(Of Guid) = Function(指针 As IntPtr) As Guid
+															  Return Marshal.PtrToStructure(Of Guid)(指针)
+														  End Function
 	Protected Sub New(指针 As IntPtr)
 		Me.指针 = 指针
 	End Sub
+
 	Protected Overrides Sub Finalize()
 		Marshal.FreeHGlobal(指针)
 	End Sub
@@ -68,9 +72,18 @@ Public Class TypedIntPtr(Of T)
 		MyBase.New(指针)
 		Me.读取器 = 读取器
 	End Sub
+	Sub New(结构体 As T)
+		MyBase.New(Marshal.AllocHGlobal(Marshal.SizeOf(Of T)))
+		Marshal.StructureToPtr(结构体, 指针, False)
+		读取器 = AddressOf Marshal.PtrToStructure(Of T)
+	End Sub
+	Sub New()
+		MyBase.New(Marshal.AllocHGlobal(Marshal.SizeOf(Of T)))
+		读取器 = AddressOf Marshal.PtrToStructure(Of T)
+	End Sub
 	ReadOnly Property 值 As T
 		Get
-			读取器.Invoke(指针)
+			Return 读取器.Invoke(指针)
 		End Get
 	End Property
 End Class

@@ -9,8 +9,8 @@
 		Me.指针 = ZeroIntPtrException.Check(指针)
 		Me.siso_hal = siso_hal
 		Me.fglib5 = fglib5
-		Dim b As New TypedIntPtr(Of IntPtr)(AddressOf Marshal.ReadIntPtr)
-		Applets = New Applet列表(fglib5.Fg_getAppletIterator.Invoke(Index, FgAppletIteratorSource.FG_AIS_FILESYSTEM, b, 0), fglib5, b.值)
+		Dim b As New TypedIntPtr(Of IntPtr)(TypedIntPtr.IntPtrReader), c As Byte = fglib5.Fg_getAppletIterator.Invoke(Index, FgAppletIteratorSource.FG_AIS_FILESYSTEM, b, 0)
+		Applets = New Applet列表(c, fglib5, b.值)
 	End Sub
 	ReadOnly Property Index As Byte
 		Get

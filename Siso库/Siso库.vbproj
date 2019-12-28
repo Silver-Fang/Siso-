@@ -7,6 +7,26 @@
     <UserSecretsId>11375a46-a25a-4d4b-9b16-888332eb2a87</UserSecretsId>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <NoWarn>41999,42016,42020,42021,42022</NoWarn>
+    <WarningsAsErrors>42017,42018,42019,42032,42036</WarningsAsErrors>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <NoWarn>41999,42016,42020,42021,42022</NoWarn>
+    <WarningsAsErrors>42017,42018,42019,42032,42036</WarningsAsErrors>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <NoWarn>41999,42016,42020,42021,42022</NoWarn>
+    <WarningsAsErrors>42017,42018,42019,42032,42036</WarningsAsErrors>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <NoWarn>41999,42016,42020,42021,42022</NoWarn>
+    <WarningsAsErrors>42017,42018,42019,42032,42036</WarningsAsErrors>
+  </PropertyGroup>
+
   <ItemGroup>
     <Import Include="System.ComponentModel" />
     <Import Include="System.Runtime.InteropServices" />

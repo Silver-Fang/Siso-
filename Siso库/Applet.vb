@@ -15,6 +15,11 @@
 			Return fglib5.Fg_getAppletIntProperty.Invoke(指针, [property])
 		End Get
 	End Property
+	ReadOnly Property Path As String
+		Get
+			Return StringProperty(FgAppletStringProperty.FG_AP_STRING_APPLET_PATH)
+		End Get
+	End Property
 	Public Overrides Function Equals(obj As Object) As Boolean
 		Dim a As Applet = obj
 		Return 指针 = a.指针
